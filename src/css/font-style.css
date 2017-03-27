@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?2djvav');
+  src:  url('../fonts/icomoon.eot?2djvav#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?2djvav') format('truetype'),
+    url('../fonts/icomoon.woff?2djvav') format('woff'),
+    url('../fonts/icomoon.svg?2djvav#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clock:before {
+  content: "\e94e";
+  color: #8c939d;
+}
+.icon-message:before {
+  content: "\e970";
+  color: #8c939d;
+}
+.icon-setting:before {
+  content: "\e992";
+  color: #8c939d;
+}
+.icon-warning:before {
+  content: "\ea07";
+  color: #ffc400;
+}
+.icon-error:before {
+  content: "\ea08";
+  color: red;
+}
+.icon-cancel:before {
+  content: "\ea0d";
+  color: #8c939d;
+}
+.icon-disabled:before {
+  content: "\ea0e";
+  color: #8c939d;
+}
+

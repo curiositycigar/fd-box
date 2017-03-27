@@ -1,7 +1,7 @@
 <template>
   <div class="f-box" :style="getContentStyle">
     <div v-show="header" class="f-box-header" :style="getHeaderHeight">
-      <i class="warning"></i>
+      <i :class="headerIconClass"></i>
       <span>{{ title }}</span>
     </div>
     <div class="f-box-body" :style="getBodyHeight">
@@ -60,6 +60,9 @@
       },
       getHeaderHeight() {
         return 'height:' + this.headerHeight;
+      },
+      headerIconClass() {
+        return 'icon-' + this.type;
       }
     },
     props: {
@@ -75,7 +78,7 @@
         type: String,
         default: '100%'
       },
-      iconStyle: {
+      type: {
         type: String,
         default: 'warning'
       },
@@ -92,11 +95,12 @@
         default: 1
       }
     }
-    //  ['title', 'height', 'width', 'iconStyle', 'header', 'bars']
+    //  ['title', 'height', 'width', 'type', 'header', 'bars']
   };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "css/font-style.css"
   .f-box
     border: solid 1px #d1dbe5;
     border-radius: 5px;
@@ -109,8 +113,7 @@
         display: inline-block
         width: 20px
         height: 20px
-        border-radius: 10px
-        background: #00ffff
+        font-size: 20px
         vertical-align: top
       span
         display: inline-block
