@@ -1,6 +1,6 @@
 {
   "name": "fd-box",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "a header-boxs component for vue",
   "main": "index.js",
   "scripts": {
