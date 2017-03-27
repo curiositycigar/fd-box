@@ -17,7 +17,13 @@
   export default {
     data() {
       return {
-        barArray: ['100%']
+        barArray: ['100%'],
+        headerHeight: {
+          tiny: 32,
+          small: 34,
+          big: 40,
+          large: 50
+        }
       };
     },
     created() {
@@ -26,7 +32,7 @@
         let bar = 100 / this.bars;
         for (let i = 0; i < this.bars; i++) {
           reBars.push({
-            index: i,
+            index: i + 1,
             width: bar + '%'
           });
         }
@@ -52,7 +58,8 @@
     },
     computed: {
       getBodyHeight() {
-        return 'height:' + (Number.parseInt(this.height) - Number.parseInt(this.headerHeight)) + 'px';
+        let height = this.header ? Number.parseInt(this.height) - this.headerHeight[this.size] : Number.parseInt(this.height);
+        return 'height:' + height + 'px';
       },
       getContentStyle() {
         return 'width:' + this.width + '; height:' + this.height;
@@ -113,28 +120,28 @@
           width: 12px
           height: 12px
           font-size: 12px
-          +span
+          + span
             line-height: 12px
             font-size: 12px
         &.small
           width: 14px
           height: 14px
           font-size: 14px
-          +span
+          + span
             line-height: 14px
             font-size: 14px
         &.big
           width: 20px
           height: 20px
           font-size: 20px
-          +span
+          + span
             line-height: 20px
             font-size: 16px
         &.large
           width: 30px
           height: 30px
           font-size: 30px
-          +span
+          + span
             line-height: 30px
             font-size: 20px
       span
