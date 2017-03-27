@@ -1,6 +1,6 @@
 <template>
   <div class="f-box" :style="getContentStyle">
-    <div v-show="header" class="f-box-header" :style="getHeaderHeight">
+    <div v-show="header" class="f-box-header">
       <i :class="headerIconClass"></i>
       <span>{{ title }}</span>
     </div>
@@ -43,7 +43,6 @@
           };
         });
       }
-      console.log(reBars);
       this.barArray = reBars;
     },
     methods: {
@@ -58,11 +57,8 @@
       getContentStyle() {
         return 'width:' + this.width + '; height:' + this.height;
       },
-      getHeaderHeight() {
-        return 'height:' + this.headerHeight;
-      },
       headerIconClass() {
-        return 'icon-' + this.type;
+        return 'icon-' + this.type + ' ' + this.size;
       }
     },
     props: {
@@ -86,13 +82,13 @@
         type: Boolean,
         default: true
       },
-      headerHeight: {
-        type: String,
-        default: '40px'
-      },
       bars: {
         type: [Number, Array],
         default: 1
+      },
+      size: {
+        type: String,
+        default: 'small'
       }
     }
     //  ['title', 'height', 'width', 'type', 'header', 'bars']
@@ -107,19 +103,44 @@
     .f-box-header
       box-sizing: border-box
       width: 100%
+      line-height: 100%
       padding: 10px 0 10px 15px
       border-bottom: solid 1px #d1dbe5
       i
         display: inline-block
-        width: 20px
-        height: 20px
-        font-size: 20px
         vertical-align: top
+        &.tiny
+          width: 12px
+          height: 12px
+          font-size: 12px
+          +span
+            line-height: 12px
+            font-size: 12px
+        &.small
+          width: 14px
+          height: 14px
+          font-size: 14px
+          +span
+            line-height: 14px
+            font-size: 14px
+        &.big
+          width: 20px
+          height: 20px
+          font-size: 20px
+          +span
+            line-height: 20px
+            font-size: 16px
+        &.large
+          width: 30px
+          height: 30px
+          font-size: 30px
+          +span
+            line-height: 30px
+            font-size: 20px
       span
         display: inline-block
-        height: 20px
-        margin: auto 0
-        font-size: 14px
+        height: 100%
+        margin: auto 10px
         font-weight: 600
         vertical-align: top
     .f-box-body
