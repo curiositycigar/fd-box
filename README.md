@@ -1,10 +1,10 @@
-##安装
+## 安装
 
-npm install fd-box --save
+> npm install fd-box --save
 
-##使用
+## 使用
 
-####javascript
+#### javascript
 
 ```
 import box from 'fd-box';
@@ -25,7 +25,7 @@ export default {
 }
 ```
 
-####html
+#### html
 
 ```
 <yourname-box
