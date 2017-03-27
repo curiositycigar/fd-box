@@ -1,7 +1,11 @@
 ##安装
+
 npm install fd-box --save
+
 ##使用
+
 ####javascript
+
 ```
 import box from 'fd-box';
 
@@ -20,7 +24,9 @@ export default {
   }
 }
 ```
+
 ####html
+
 ```
 <yourname-box
   title="your header content"
