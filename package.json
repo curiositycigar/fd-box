@@ -61,6 +61,10 @@
   "keywords": [
     "box"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:curiositycigar/fd-box.git"
+  },
   "author": "YOU",
   "license": "ISC"
 }
